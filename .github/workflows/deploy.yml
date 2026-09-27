@@ -51,7 +51,7 @@ jobs:
             --command-id "$COMMAND_ID" \
             --instance-id i-054dc321b27633562 \
             --query "StandardOutputContent" \
-            --output 
+            --output text
             
       - name: Check Docker on EC2
         run: |
