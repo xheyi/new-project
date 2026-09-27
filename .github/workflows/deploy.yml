@@ -31,3 +31,11 @@ jobs:
 
       - name: Test AWS authentication
         run: aws sts get-caller-identity
+
+      - name: Test SSM connection
+        run: |
+          aws ssm send-command \
+            --instance-ids i-054dc321b27633562 \
+            --document-name "AWS-RunShellScript" \
+            --parameters 'commands=["whoami"]' \
+            --comment "Test SSM connection"
